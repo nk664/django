@@ -15,7 +15,7 @@
         <div class="flex justify-between items-center mb-8">
             <h1 class="text-3xl font-bold text-gray-700">Student Management</h1>
 
-            <a href="/student/add" class="bg-blue-500 text-white px-5 py-2 rounded-lg hover:bg-blue-600">
+            <a href="{% url 'add_student'%}" class="bg-blue-500 text-white px-5 py-2 rounded-lg hover:bg-blue-600">
                 + Add Student
             </a>
         </div>
@@ -32,21 +32,21 @@
                 </h2>
 
                 <p class="text-gray-600">
-                    📧 {{ student.email }}
+                    📧 {{student.email }}
                 </p>
 
                 <p class="text-gray-600 mb-4">
-                    📱 {{ student.phone }}
+                    📱 {{ student.phone_number }}
                 </p>
 
                 <div class="flex gap-3">
 
-                    <a href="/student/edit/{{student.id}}"
+                    <a href="{% url 'update_student' student.id%}"
                         class="bg-yellow-400 text-white px-3 py-1 rounded hover:bg-yellow-500">
-                        Edit
+                        Update
                     </a>
 
-                    <a href="/student/delete/{{student.id}}"
+                    <a href=" {% url 'delete_student' student.id%}"
                         class="bg-red-500 text-white px-3 py-1 rounded hover:bg-red-600">
                         Delete
                     </a>
